@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mediarecorder.charlie.com.mediarecorder" >
+
+    <!-- 自定义相机的权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 声明当前程序需要使用照相机功能  注意camera必须这样写 不能有2 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 录音权限，录音功能，和录像功能 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 如果拍照录像需要包含位置信息，那么设置这个权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 开闪光灯权限 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".MainActivity" >
+
+        </activity>
+        <activity android:name=".CameraActivity" />
+        <activity android:name=".AudioRecordActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
